@@ -1,0 +1,18 @@
+{
+  "name": "jj-browser-fn",
+  "version": "1.0.1",
+  "description": "useful js func in browser",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack ./index.js --mode production"
+  },
+  "keywords": [
+    "js"
+  ],
+  "author": "Javison",
+  "license": "MIT",
+  "dependencies": {
+    "jj-core-fn": "^1.0.2"
+  }
+}
