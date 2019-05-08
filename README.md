@@ -2,7 +2,7 @@
 
 ## 引用库，后续 $fn 直接当作全局进行使用
 ```js
-import $fn from 'jj-core-fn'
+import $fn from 'jj-browser-fn'
 ```
 
 ## 不依赖浏览器部分
