@@ -4,7 +4,39 @@
     ```js
     import $fn from 'jj-browser-fn'
     ```
-[TOC]
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+- [js工具函数（浏览器环境）](#js%E5%B7%A5%E5%85%B7%E5%87%BD%E6%95%B0%E6%B5%8F%E8%A7%88%E5%99%A8%E7%8E%AF%E5%A2%83)
+
+- [字符处理](#%E5%AD%97%E7%AC%A6%E5%A4%84%E7%90%86)
+  - [默认处理非数值的内容为0](#%E9%BB%98%E8%AE%A4%E5%A4%84%E7%90%86%E9%9D%9E%E6%95%B0%E5%80%BC%E7%9A%84%E5%86%85%E5%AE%B9%E4%B8%BA0)
+  - [默认处理空字符串为'--'](#%E9%BB%98%E8%AE%A4%E5%A4%84%E7%90%86%E7%A9%BA%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%BA--)
+  - [判断是否有值](#%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E6%9C%89%E5%80%BC)
+  - [给URL添加参数](#%E7%BB%99url%E6%B7%BB%E5%8A%A0%E5%8F%82%E6%95%B0)
+  - [将编码由utf8转为utf16](#%E5%B0%86%E7%BC%96%E7%A0%81%E7%94%B1utf8%E8%BD%AC%E4%B8%BAutf16)
+  - [将编码由utf16转为utf8](#%E5%B0%86%E7%BC%96%E7%A0%81%E7%94%B1utf16%E8%BD%AC%E4%B8%BAutf8)
+  - [对字符串进行base64编码](#%E5%AF%B9%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9B%E8%A1%8Cbase64%E7%BC%96%E7%A0%81)
+  - [对字符串进行base64解码](#%E5%AF%B9%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9B%E8%A1%8Cbase64%E8%A7%A3%E7%A0%81)
+- [数字处理](#%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86)
+  - [显示两位小数的金额](#%E6%98%BE%E7%A4%BA%E4%B8%A4%E4%BD%8D%E5%B0%8F%E6%95%B0%E7%9A%84%E9%87%91%E9%A2%9D)
+  - [千位符显示数字](#%E5%8D%83%E4%BD%8D%E7%AC%A6%E6%98%BE%E7%A4%BA%E6%95%B0%E5%AD%97)
+- [时间处理](#%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86)
+  - [自定义格式](#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%BC%E5%BC%8F)
+  - [距离当前时间差处理](#%E8%B7%9D%E7%A6%BB%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4%E5%B7%AE%E5%A4%84%E7%90%86)
+- [cookie操作](#cookie%E6%93%8D%E4%BD%9C)
+- [链接操作](#%E9%93%BE%E6%8E%A5%E6%93%8D%E4%BD%9C)
+- [ajax请求](#ajax%E8%AF%B7%E6%B1%82)
+- [设备信息](#%E8%AE%BE%E5%A4%87%E4%BF%A1%E6%81%AF)
+  - [获取系统版本](#%E8%8E%B7%E5%8F%96%E7%B3%BB%E7%BB%9F%E7%89%88%E6%9C%AC)
+- [html字符与实体转换](#html%E5%AD%97%E7%AC%A6%E4%B8%8E%E5%AE%9E%E4%BD%93%E8%BD%AC%E6%8D%A2)
+  - [将html字符实体转译成html字符](#%E5%B0%86html%E5%AD%97%E7%AC%A6%E5%AE%9E%E4%BD%93%E8%BD%AC%E8%AF%91%E6%88%90html%E5%AD%97%E7%AC%A6)
+  - [将html字符转译成html字符实体](#%E5%B0%86html%E5%AD%97%E7%AC%A6%E8%BD%AC%E8%AF%91%E6%88%90html%E5%AD%97%E7%AC%A6%E5%AE%9E%E4%BD%93)
+- [LocalStorage操作](#localstorage%E6%93%8D%E4%BD%9C)
+- [dom操作](#dom%E6%93%8D%E4%BD%9C)
+- [自定义扩展 $fn](#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%89%A9%E5%B1%95-fn)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## 字符处理
 ### 默认处理非数值的内容为0
 对非数字的内容，返回默认想展示的内容defaultVal || 0，否则返回原值

@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack ./index.js --mode production"
+    "build": "webpack ./index.js --mode production",
+    "doc":"doctoc README.md"
   },
   "keywords": [
     "js"
