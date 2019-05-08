@@ -34,6 +34,29 @@ $fn.s(null) //返回'--'
 ```js
 $fn.hasValue(null) //返回false
 ```
+### 给URL添加参数
+```js
+$fn.urlAddParams(url,{
+    user:'admin'
+})
+```
+### 将编码由utf8转为utf16
+```js
+$fn.utf8to16(str) 
+```
+### 将编码由utf16转为utf8
+```js
+$fn.utf16to8(str) 
+```
+### 对字符串进行base64编码
+```js
+$fn.encodeBase64(str) 
+```
+### 对字符串进行base64解码
+```js
+$fn.decodeBase64(str) 
+```
+
 ### 时间自定义处理
 * YMDhms直接替换对应时间单位，格式可自由替换
 * 没有参数直接返回Y-M-D h:m:s(如2018-01-01 12:21:45)
@@ -181,4 +204,16 @@ $fn.decodeHtmlEntities(str)
 ### 将html字符转译成html字符实体
 ```js
 $fn.encodeHtmlEntities(str)
+```
+
+### LocalStorage
+```js
+//设置值
+$fn.setStorage(key,value)
+//获取值
+$fn.getStorage(key)
+//删除值
+$fn.removeStorage(key)
+//清空
+$fn.clearStorage()
 ```
