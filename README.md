@@ -107,3 +107,15 @@ $fn.setRequestTestFn((data)=>{
     }
 })
 ```
+
+## 自定义扩展 $fn
+```js
+import Fn from 'jj-browser-fn/main.js'
+class ProjFn {
+    constructor() {
+
+    }
+}
+ProjFn.prototype.__proto__ = Fn.prototype
+export default new ProjFn()
+```

@@ -18,7 +18,6 @@ class Fn extends aggregation(
     CookieClass,
     HttpClass
 ) {
-    
 }
 
 export default Fn
