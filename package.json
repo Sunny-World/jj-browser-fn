@@ -1,12 +1,12 @@
 {
   "name": "jj-browser-fn",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "useful js func in browser",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack ./index.js --mode production",
-    "doc":"doctoc README.md"
+    "doc": "doctoc README.md"
   },
   "keywords": [
     "js"
