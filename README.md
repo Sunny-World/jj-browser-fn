@@ -22,7 +22,7 @@ $fn.showMoney(1234) //返回12.34
 ```
 ### 千位符显示数字
 ```js
-$fn.showThousandMoney(123400) //返回1,234.00
+$fn.showThousandMoney(1234) //返回1,234.00
 ```
 ### 默认处理空字符串为'--'
 对undefined/null/''(空字符串)，返回默认想展示的内容defaultVal || '--'，否则返回原值
@@ -119,4 +119,66 @@ class ProjFn {
 }
 ProjFn.prototype.__proto__ = Fn.prototype
 export default new ProjFn()
+```
+
+## 设备部分
+```js
+$fn.getDeviceType()
+/** 返回
+{
+    isMoble: /iphone|ipod|android.*mobile|windows.*phone|blackberry.*mobile/i.test(window.navigator.userAgent.toLowerCase()), //判断是否为移动端
+    isAppleMobile: /iphone|ipod|ipad|Macintosh/i.test(navigator.userAgent
+        .toLowerCase()), //是否为苹果移动端
+    isAndroidMobile: /android/i.test(navigator.userAgent.toLowerCase()), //是否为安卓移动端
+    isUc: /ucweb/.test(UserAgent), // UC浏览器
+    isChrome: /chrome/.test(UserAgent.substr(-33, 6)), // Chrome浏览器
+    isFirefox: /firefox/.test(UserAgent), // 火狐浏览器
+    isOpera: /opera/.test(UserAgent), // Opera浏览器
+    isSafire: /safari/.test(UserAgent) && !/chrome/.test(UserAgent), // safire浏览器
+    is360: /360se/.test(UserAgent), // 360浏览器
+    isBaidu: /bidubrowser/.test(UserAgent), // 百度浏览器
+    isSougou: /metasr/.test(UserAgent), // 搜狗浏览器
+    isIE6: /msie 6.0/.test(UserAgent), // IE6
+    isIE7: /msie 7.0/.test(UserAgent), // IE7
+    isIE8: /msie 8.0/.test(UserAgent), // IE8
+    isIE9: /msie 9.0/.test(UserAgent), // IE9
+    isIE10: /msie 10.0/.test(UserAgent), // IE10
+    isIE11: /msie 11.0/.test(UserAgent), // IE11
+    isLB: /lbbrowser/.test(UserAgent), // 猎豹浏览器
+    isWX: /micromessenger/.test(UserAgent), // 微信内置浏览器
+    isQQ: /qqbrowser/.test(UserAgent), // QQ浏览器
+    isIpad: /ipad/.test(UserAgent), // ipad
+    isIphone: /iphone os/.test(UserAgent), // iphone
+    isAndroid: /android/.test(UserAgent), //安卓
+    isWindowsCe: /windows ce/.test(UserAgent),
+    isWindowsMobile: /windows mobile/.test(UserAgent),
+    isWin2K: /windows nt 5.0/.test(UserAgent),
+    isXP: /windows nt 5.1/.test(UserAgent),
+    isVista: /windows nt 6.0/.test(UserAgent),
+    isWin7: /windows nt 6.1/.test(UserAgent),
+    isWin8: /windows nt 6.2/.test(UserAgent),
+    isWin81: /windows nt 6.3/.test(UserAgent),
+    isWin10: /windows nt 10.0/.test(UserAgent),
+    isTouchScreen: ('ontouchstart' in window) || window.DocumentTouch &&
+        document instanceof DocumentTouch,
+    isChromeOnAndroid
+}
+*/
+$fn.getExplorerInfo()
+/** 返回
+{
+    type:'IE',/Firefox/Chrome/Opera/Safari
+    version:''
+}
+*/
+```
+
+### 将html字符实体转译成html字符
+```js
+$fn.decodeHtmlEntities(str)
+```
+
+### 将html字符转译成html字符实体
+```js
+$fn.encodeHtmlEntities(str)
 ```

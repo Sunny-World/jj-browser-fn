@@ -11,12 +11,20 @@ import {
 import {
     HttpClass
 } from './fn/Http.js'
+import {
+    DeviceClass
+} from './fn/Device.js'
+import {
+    DomClass
+} from './fn/Dom.js'
 
 class Fn extends aggregation(
     coreFn,
     UrlClass,
     CookieClass,
-    HttpClass
+    HttpClass,
+    DeviceClass,
+    DomClass
 ) {
 }
 
