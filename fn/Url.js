@@ -48,5 +48,10 @@ class UrlFn {
             })()
         }
     }
+    reportUrl(url,obj){
+        let src = this.urlAddParams(url, obj)
+        var img = new Image()
+        img.src = src
+    }
 }
 export const UrlClass = UrlFn

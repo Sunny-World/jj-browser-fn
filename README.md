@@ -88,6 +88,10 @@ $fn.toHref(href)
 $fn.toOpen(href)
 //解析url为可操作的的对象
 $fn.parseUrl(href)
+//上报url,只通过图片形式上传
+$fn.reportUrl(url,{
+    id:123
+})
 ```
 
 ### ajax请求
