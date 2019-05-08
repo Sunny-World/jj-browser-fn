@@ -1,13 +1,11 @@
-# jj-browser-fn
-
-## github : https://github.com/Javison666/jj-browser-fn
-
-## 引用库，后续 $fn 直接当作全局进行使用
-```js
-import $fn from 'jj-browser-fn'
-```
-
-## 不依赖浏览器部分
+# js工具函数（浏览器环境）
+- github : https://github.com/Javison666/jj-browser-fn
+- 引用库，后续 $fn 直接当作全局进行使用
+    ```js
+    import $fn from 'jj-browser-fn'
+    ```
+[TOC]
+## 字符处理
 ### 默认处理非数值的内容为0
 对非数字的内容，返回默认想展示的内容defaultVal || 0，否则返回原值
 ```js
@@ -16,15 +14,6 @@ $fn.n(1) //返回1
 $fn.n('1') //返回'1'
 $fn.n('1a') //返回0
 $fn.n('1a',null) //返回null
-```
-### 显示两位小数的金额
-```js
-$fn.showMoney(34) //返回0.34
-$fn.showMoney(1234) //返回12.34
-```
-### 千位符显示数字
-```js
-$fn.showThousandMoney(1234) //返回1,234.00
 ```
 ### 默认处理空字符串为'--'
 对undefined/null/''(空字符串)，返回默认想展示的内容defaultVal || '--'，否则返回原值
@@ -59,7 +48,19 @@ $fn.encodeBase64(str)
 $fn.decodeBase64(str) 
 ```
 
-### 时间自定义处理
+## 数字处理
+### 显示两位小数的金额
+```js
+$fn.showMoney(34) //返回0.34
+$fn.showMoney(1234) //返回12.34
+```
+### 千位符显示数字
+```js
+$fn.showThousandMoney(1234) //返回1,234.00
+```
+
+## 时间处理
+### 自定义格式
 * YMDhms直接替换对应时间单位，格式可自由替换
 * 没有参数直接返回Y-M-D h:m:s(如2018-01-01 12:21:45)
 * 有参数则直接替换
@@ -69,20 +70,20 @@ $fn.showDate('Y-M-D h:m:s',new Date('2018-01-01 12:21:45')) //返回2018-01-01 1
 $fn.showDate('Y-M',new Date('2018-01-01 12:21:45')) //返回2018-01
 ```
 
-### 距离当前时间的时间差处理
+### 距离当前时间差处理
 获取参数时间戳距离当前的时差，超过1秒显示*秒，超过1分显示*分，超过1时显示*时，超过1天显示*天，超过1年显示*年
 ```js
 $fn.diffToNow(new Date()) //返回0秒
 ```
 
-## 依赖浏览器部分
-### cookie部分
+<!-- 以下依赖浏览器环境 -->
+## cookie操作
 ```js
 $fn.setCookie(cname, cvalue, exdays)
 $fn.getCookie(cname, cvalue, exdays)
 $fn.clearCookie(cname, cvalue, exdays)
 ```
-### 链接操作
+## 链接操作
 ```js
 //跳转链接
 $fn.toHref(href)    
@@ -96,7 +97,7 @@ $fn.reportUrl(url,{
 })
 ```
 
-### ajax请求
+## ajax请求
 均返回promise对象，供.then()或async/await调用
 ```js
 // post请求，application/x-www-form-urlencoded;
@@ -138,12 +139,10 @@ $fn.setRequestTestFn((data)=>{
 })
 ```
 
-
-
-## 设备部分
+## 设备信息
 ```js
 $fn.getDeviceType()
-/** 返回
+/** 返回设备环境的判断对象
 {
     isMoble: /iphone|ipod|android.*mobile|windows.*phone|blackberry.*mobile/i.test(window.navigator.userAgent.toLowerCase()), //判断是否为移动端
     isAppleMobile: /iphone|ipod|ipad|Macintosh/i.test(navigator.userAgent
@@ -184,7 +183,7 @@ $fn.getDeviceType()
 }
 */
 $fn.getExplorerInfo()
-/** 返回
+/** 返回浏览器版本信息
 {
     type:'IE',/Firefox/Chrome/Opera/Safari
     version:''
@@ -196,18 +195,17 @@ $fn.getExplorerInfo()
 // 返回 Mac/Unix/Linux/Win2000/WinXP/Win2003/WinVista/Win7/Win10/other
 $fn.detectOS()
 ```
-
+## html字符与实体转换
 ### 将html字符实体转译成html字符
 ```js
 $fn.decodeHtmlEntities(str)
 ```
-
 ### 将html字符转译成html字符实体
 ```js
 $fn.encodeHtmlEntities(str)
 ```
 
-### LocalStorage
+## LocalStorage操作
 ```js
 //设置值
 $fn.setStorage(key,value)
@@ -219,7 +217,7 @@ $fn.removeStorage(key)
 $fn.clearStorage()
 ```
 
-### 关于dom的函数
+## dom操作
 ```js
 // 添加监听事件,event 不含'on'
 $fn.addListen(dom,event,fn)
