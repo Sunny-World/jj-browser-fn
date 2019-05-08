@@ -232,7 +232,7 @@ $fn.removeEvent(dom,event,fn)
 $fn.removeDom(dom)
 // 添加动画效果的class,动画结束后,该class会被删除
 $fn.addAnimateClass(dom,className)
-// 添加摇晃的class
+// 添加摇晃的class->'shake'
 $fn.shake(dom)
 // 是否含有class,返回Boolean
 $fn.hasClass(dom,className)
