@@ -22,7 +22,7 @@ $fn.showMoney(1234) //返回12.34
 ```
 ### 千位符显示数字
 ```js
-$fn.showMoney(123400) //返回1,234.00
+$fn.showThousandMoney(123400) //返回1,234.00
 ```
 ### 默认处理空字符串为'--'
 对undefined/null/''(空字符串)，返回默认想展示的内容defaultVal || '--'，否则返回原值
