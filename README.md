@@ -1,5 +1,7 @@
 # jj-browser-fn
 
+## github : https://github.com/Javison666/jj-browser-fn
+
 ## 引用库，后续 $fn 直接当作全局进行使用
 ```js
 import $fn from 'jj-browser-fn'
@@ -136,17 +138,7 @@ $fn.setRequestTestFn((data)=>{
 })
 ```
 
-## 自定义扩展 $fn
-```js
-import Fn from 'jj-browser-fn/main.js'
-class ProjFn {
-    constructor() {
 
-    }
-}
-ProjFn.prototype.__proto__ = Fn.prototype
-export default new ProjFn()
-```
 
 ## 设备部分
 ```js
@@ -199,6 +191,11 @@ $fn.getExplorerInfo()
 }
 */
 ```
+### 获取系统版本
+```js
+// 返回 Mac/Unix/Linux/Win2000/WinXP/Win2003/WinVista/Win7/Win10/other
+$fn.detectOS()
+```
 
 ### 将html字符实体转译成html字符
 ```js
@@ -222,7 +219,7 @@ $fn.removeStorage(key)
 $fn.clearStorage()
 ```
 
-## 关于dom的函数
+### 关于dom的函数
 ```js
 // 添加监听事件,event 不含'on'
 $fn.addListen(dom,event,fn)
@@ -240,4 +237,16 @@ $fn.hasClass(dom,className)
 $fn.removeClass(dom,className)
 // 切换className
 $fn.toggleClass(dom,className)
+```
+
+## 自定义扩展 $fn
+```js
+import Fn from 'jj-browser-fn/main.js'
+class ProjFn {
+    constructor() {
+
+    }
+}
+ProjFn.prototype.__proto__ = Fn.prototype
+export default new ProjFn()
 ```
