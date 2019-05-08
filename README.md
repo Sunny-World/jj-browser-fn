@@ -221,3 +221,23 @@ $fn.removeStorage(key)
 //清空
 $fn.clearStorage()
 ```
+
+## 关于dom的函数
+```js
+// 添加监听事件,event 不含'on'
+$fn.addListen(dom,event,fn)
+// 去除监听事件
+$fn.removeEvent(dom,event,fn)
+// 删除dom
+$fn.removeDom(dom)
+// 添加动画效果的class,动画结束后,该class会被删除
+$fn.addAnimateClass(dom,className)
+// 添加摇晃的class
+$fn.shake(dom)
+// 是否含有class,返回Boolean
+$fn.hasClass(dom,className)
+// 删除className
+$fn.removeClass(dom,className)
+// 切换className
+$fn.toggleClass(dom,className)
+```
