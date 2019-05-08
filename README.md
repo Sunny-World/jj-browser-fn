@@ -66,3 +66,44 @@ $fn.toOpen(href)
 //解析url为可操作的的对象
 $fn.parseUrl(href)
 ```
+
+### ajax请求
+```js
+// post请求，application/x-www-form-urlencoded;
+$fn.httpGet({
+    url:'/api/test',
+    data:{
+        username:'admin'
+    }
+})
+// post请求，application/x-www-form-urlencoded;
+$fn.httpPost({
+    url:'/api/test',
+    data:{
+        username:'admin'
+    }
+})
+// post请求，application/json;charset=UTF-8;
+$fn.httpPost({
+    url:'/api/test',
+    json:{
+        username:'admin'
+    }
+})
+// 自定义;
+$fn.httpPost({
+    url:'/api/test',
+    data:{
+        username:'admin'
+    },
+    headers:{
+        'Content-Type':'test'
+    }
+})
+// 初始化时，自定义所有请求拦截
+$fn.setRequestTestFn((data)=>{
+    if(data.code==40000){
+        //对所有请求的数据做处理
+    }
+})
+```
