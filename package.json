@@ -1,6 +1,6 @@
 {
   "name": "jj-browser-fn",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "useful js func in browser",
   "main": "index.js",
   "scripts": {
