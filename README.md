@@ -68,6 +68,7 @@ $fn.parseUrl(href)
 ```
 
 ### ajax请求
+均返回promise对象，供.then()或async/await调用
 ```js
 // post请求，application/x-www-form-urlencoded;
 $fn.httpGet({
