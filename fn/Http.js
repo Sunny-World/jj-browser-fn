@@ -35,7 +35,6 @@ class HttpFn {
 						this.Args = encodeURI(args);
 					}
 				}
-				console.log(this.Args)
 			}
 		// }
 		let q = this.Request;
