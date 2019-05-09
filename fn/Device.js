@@ -1,5 +1,5 @@
 // 客户端设备相关信息
-class DeviceClass {
+class DeviceFn {
     constructor() {}
     getDeviceType() {
         let UserAgent = navigator.userAgent.toLowerCase();
@@ -136,4 +136,4 @@ class DeviceClass {
         }
     }
 }
-export default DeviceClass
+export const DeviceClass = DeviceFn
