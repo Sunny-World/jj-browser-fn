@@ -39,4 +39,4 @@ class LocalStorageFn {
         return Object.prototype.toString.call(object).match(/^\[object\s(.*)\]$/)[1];
     }
 }
-export default LocalStorageFn
+export const LocalStorageClass = LocalStorageFn

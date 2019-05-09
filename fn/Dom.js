@@ -75,4 +75,4 @@ class DomFn {
         }
     }
 }
-export default DomFn
+export const DomClass = DomFn

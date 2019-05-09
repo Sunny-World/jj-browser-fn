@@ -17,6 +17,9 @@ import {
 import {
     DomClass
 } from './fn/Dom.js'
+import {
+    LocalStorageClass
+} from './fn/LocalStorage'
 
 class Fn extends aggregation(
     coreFn,
