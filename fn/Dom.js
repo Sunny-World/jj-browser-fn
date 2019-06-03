@@ -55,6 +55,17 @@ class DomFn {
             this.removeClass(dom, 'shake animated')
         })
     }
+    //   一次执行
+    once(dom, type, callback) {
+        type = type.split(' ')
+        for (let item of type) {
+            let handle = () => {
+                callback()
+                dom.removeEventListener(item, handle)
+            }
+            dom.addEventListener(item, handle)
+        }
+    }
     hasClass(dom, cls) {
         return dom.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
     }
