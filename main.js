@@ -27,7 +27,8 @@ class Fn extends aggregation(
     CookieClass,
     HttpClass,
     DeviceClass,
-    DomClass
+    DomClass,
+    LocalStorageClass
 ) {
 }
 
