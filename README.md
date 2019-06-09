@@ -5,6 +5,10 @@
     ```js
     import $fn from 'jj-browser-fn'
     ```
+- html直接引用
+    ```html
+    <script src="jj-browser-fn/common/$fn.js"></script>
+    ```
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 - [js工具函数（浏览器环境）](#js%E5%B7%A5%E5%85%B7%E5%87%BD%E6%95%B0%E6%B5%8F%E8%A7%88%E5%99%A8%E7%8E%AF%E5%A2%83)
@@ -274,14 +278,11 @@ $fn.toggleClass(dom,className)
 
 ## 自定义扩展 $fn
 ```js
-import Fn from 'jj-browser-fn/main.js'
-class ProjFn {
-    constructor() {
-
-    }
+import $fn from 'jj-browser-fn'
+const ProjFn ={
+    ...$fn
 }
-ProjFn.prototype.__proto__ = Fn.prototype
-export default new ProjFn()
+export default ProjFn
 ```
 
 ## 请我喝杯果汁呗～

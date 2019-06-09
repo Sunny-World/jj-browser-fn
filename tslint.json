@@ -1,0 +1,44 @@
+{
+	"defaultSeverity": "warning",
+	"extends": [
+		"tslint:recommended"
+	],
+	"linterOptions": {
+		"exclude": [
+			"node_modules/**"
+		]
+	},
+	"rules": {
+		"semicolon": [
+			false,
+			"always"
+		],
+		"quotemark": [
+			false,
+			"single"
+		],
+		"indent": [
+			false,
+			"tabs",
+			4
+		],
+		// "max-line-length": [
+		// 	true,
+		// 	200
+		// ],
+		"interface-name": false,
+		"ordered-imports": false,
+		"object-literal-sort-keys": false,
+		"no-consecutive-blank-lines": false,
+		"arrow-parens": false,
+		"trailing-comma": [false, { //对尾随逗号的校验
+			"multiline": {
+				"objects": "ignore",
+				"arrays": "never",
+				"functions": "never",
+				"typeLiterals": "ignore"
+			},
+			"esSpecCompliant": true //是否允许尾随逗号出现在剩余变量中
+		}]
+	}
+}

@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-jj-core-fn@^1.0.10:
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/jj-core-fn/-/jj-core-fn-1.0.10.tgz#7937b090afe08864e17c9e6166d2ca0fefd9c739"
-  integrity sha512-vcYKEmmcED4Q7oXZFDuf/BBwdfkeIy4Wv6J+S+rCc85edDKg32jaK2vboyy3E+Jw/lInaK9Qb80F6u4EqZsJAQ==
+jj-core-fn@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/jj-core-fn/-/jj-core-fn-2.0.1.tgz#ed72c17ea36665761f9635c83af4f114fc92917b"
+  integrity sha512-cG8i0u4Ait8i9A31HO6pDWb72PWHN5CSrnJMF+KseeYU4L2gbPo2wOFCfFcZ6DuDka1oEEjpnUYFwh2zdxVC5g==

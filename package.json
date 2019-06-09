@@ -1,19 +1,21 @@
 {
-  "name": "jj-browser-fn",
-  "version": "1.0.22",
-  "description": "useful js func in browser",
-  "main": "index.js",
+  "name": "jj-core-fn",
+  "version": "2.0.1",
+  "author": "Javison <web_jwq@163.com> (https://www.jiweiqing.cn/)",
+  "license": "MIT",
+  "description": "useful js func",
+  "main": "./dist/index.js",
+  "types": "./dist/types/index.d.ts",
+  "private": false,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack ./index.js --mode production",
-    "doc": "doctoc README.md"
+    "dev": "tsc --watch",
+    "build": "tsc && webpack"
   },
   "keywords": [
+    "typescript",
     "js"
   ],
-  "author": "Javison",
-  "license": "MIT",
   "dependencies": {
-    "jj-core-fn": "^1.0.10"
+    "jj-core-fn": "^2.0.1"
   }
 }
