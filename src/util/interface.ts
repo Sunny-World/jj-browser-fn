@@ -69,8 +69,8 @@ export interface HttpFace {
     originHttpPost(obj, fn: any): void,
     originHttpGet(obj, fn: any): void,
     setRequestTestFn(fn: any): void,
-    httpPost(obj): void,
-    httpGet(obj): void
+    httpPost(obj): any,
+    httpGet(obj): any
 }
 export interface LocalStorageFace {
     setStorage(key: string, obj): void,
