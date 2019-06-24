@@ -62,13 +62,13 @@ export interface DomFace {
     toggleClass(dom, cls:string):void,
 }
 export interface HttpFace {
-    httpConnect(): void,
-    setRequestHeader(): void,
-    onStateChange(xhr, success, failure): void,
-    ajaxFn(obj): void,
-    originHttpPost(obj, fn: any): void,
-    originHttpGet(obj, fn: any): void,
-    setRequestTestFn(fn: any): void,
+    httpConnect(): any,
+    setRequestHeader(): any,
+    onStateChange(xhr, success, failure): any,
+    ajaxFn(obj): any,
+    originHttpPost(obj, fn: any): any,
+    originHttpGet(obj, fn: any): any,
+    setRequestTestFn(fn: any): any,
     httpPost(obj): any,
     httpGet(obj): any
 }
