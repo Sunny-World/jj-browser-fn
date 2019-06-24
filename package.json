@@ -16,6 +16,6 @@
     "js"
   ],
   "dependencies": {
-    "jj-core-fn": "^2.0.1"
+    "jj-core-fn": "^2.0.8"
   }
 }

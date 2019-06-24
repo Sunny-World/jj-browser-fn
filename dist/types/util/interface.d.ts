@@ -61,15 +61,15 @@ export interface DomFace {
     toggleClass(dom: any, cls: string): void;
 }
 export interface HttpFace {
-    httpConnect(): void;
-    setRequestHeader(): void;
-    onStateChange(xhr: any, success: any, failure: any): void;
-    ajaxFn(obj: any): void;
-    originHttpPost(obj: any, fn: any): void;
-    originHttpGet(obj: any, fn: any): void;
-    setRequestTestFn(fn: any): void;
-    httpPost(obj: any): void;
-    httpGet(obj: any): void;
+    httpConnect(): any;
+    setRequestHeader(): any;
+    onStateChange(xhr: any, success: any, failure: any): any;
+    ajaxFn(obj: any): any;
+    originHttpPost(obj: any, fn: any): any;
+    originHttpGet(obj: any, fn: any): any;
+    setRequestTestFn(fn: any): any;
+    httpPost(obj: any): any;
+    httpGet(obj: any): any;
 }
 export interface LocalStorageFace {
     setStorage(key: string, obj: any): void;
