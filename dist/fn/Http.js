@@ -83,7 +83,7 @@ export var HttpFn = {
             }
         }
     },
-    ajaxFn: function (_a) {
+    ajaxFn: function (_a, callback) {
         var url = _a.url, method = _a.method, args = _a.args, headers = _a.headers, fn = _a.fn, dataType = _a.dataType, type = _a.type;
         this.URL = "";
         this.Method = "GET";
@@ -94,7 +94,11 @@ export var HttpFn = {
         this.onSuccess = function () { };
         this.onFailure = function () { };
         // tslint:disable-next-line
-        this.Request = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+        var rq = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+        if (typeof callback === 'function') {
+            callback(rq);
+        }
+        this.Request = rq;
         // 兼容java不接收undefined参数
         for (var o in args) {
             if (args[o] === undefined) {
@@ -120,73 +124,61 @@ export var HttpFn = {
         };
         this.httpConnect();
     },
-    originHttpPost: function (obj, fn) {
+    originHttpPost: function (obj, fn, callback) {
+        var d = {
+            url: obj.url,
+            method: 'post',
+            fn: fn,
+            type: obj.type,
+            headers: obj.headers,
+        };
         if (obj.json !== undefined) {
-            this.ajaxFn({
-                url: obj.url,
-                method: 'post',
-                args: obj.json,
-                fn: fn,
-                headers: obj.headers,
-                dataType: 'json',
-                type: obj.type
-            });
+            d.args = obj.json;
+            d.dataType = 'json';
         }
         else {
-            this.ajaxFn({
-                url: obj.url,
-                method: 'post',
-                args: obj.data,
-                headers: obj.headers,
-                fn: fn,
-                type: obj.type
-            });
+            d.args = obj.data;
         }
+        this.ajaxFn(d, callback);
     },
-    originHttpGet: function (obj, fn) {
+    originHttpGet: function (obj, fn, callback) {
+        var d = {
+            url: obj.url,
+            method: 'get',
+            headers: obj.headers,
+            fn: fn,
+            type: obj.type
+        };
         if (obj.json !== undefined) {
-            this.ajaxFn({
-                url: obj.url,
-                method: 'get',
-                args: obj.json,
-                headers: obj.headers,
-                fn: fn,
-                dataType: 'json',
-                type: obj.type
-            });
+            d.args = obj.json;
+            d.dataType = 'json';
         }
         else {
-            this.ajaxFn({
-                url: obj.url,
-                method: 'get',
-                args: obj.data,
-                headers: obj.headers,
-                fn: fn,
-                type: obj.type
-            });
+            d.args = obj.data;
         }
+        this.ajaxFn(d, callback);
     },
     setRequestTestFn: function (fn) {
         if (this.requestDataAllfn) {
             this.requestDataAllfn = fn;
         }
     },
-    httpPost: function (obj) {
+    httpPost: function (obj, callback) {
         var _this = this;
         return new Promise(function (resolve) {
             _this.originHttpPost(obj, function (res) {
                 _this.setRequestTestFn(res);
                 resolve(res);
-            });
+            }, callback);
         });
     },
-    httpGet: function (obj) {
+    httpGet: function (obj, callback) {
         var _this = this;
         return new Promise(function (resolve) {
             _this.originHttpGet(obj, function (res) {
                 _this.setRequestTestFn(res);
                 resolve(res);
-            });
+            }, callback);
         });
     }
 };

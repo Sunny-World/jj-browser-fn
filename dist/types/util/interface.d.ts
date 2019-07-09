@@ -64,12 +64,12 @@ export interface HttpFace {
     httpConnect(): any;
     setRequestHeader(): any;
     onStateChange(xhr: any, success: any, failure: any): any;
-    ajaxFn(obj: any): any;
-    originHttpPost(obj: any, fn: any): any;
-    originHttpGet(obj: any, fn: any): any;
+    ajaxFn(obj: any, callback?: any): any;
+    originHttpPost(obj: any, fn: any, callback?: any): any;
+    originHttpGet(obj: any, fn: any, callback?: any): any;
     setRequestTestFn(fn: any): any;
-    httpPost(obj: any): any;
-    httpGet(obj: any): any;
+    httpPost(obj: any, callback?: any): any;
+    httpGet(obj: any, callback?: any): any;
 }
 export interface LocalStorageFace {
     setStorage(key: string, obj: any): void;
