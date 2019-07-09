@@ -20,7 +20,7 @@
     - [默认处理非数值的内容为0](#%E9%BB%98%E8%AE%A4%E5%A4%84%E7%90%86%E9%9D%9E%E6%95%B0%E5%80%BC%E7%9A%84%E5%86%85%E5%AE%B9%E4%B8%BA0)
     - [默认处理空字符串为'--'](#%E9%BB%98%E8%AE%A4%E5%A4%84%E7%90%86%E7%A9%BA%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%BA)
     - [判断是否有值](#%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E6%9C%89%E5%80%BC)
-    - [给URL添加参数](#%E7%BB%99url%E6%B7%BB%E5%8A%A0%E5%8F%82%E6%95%B0)
+    - [给URL添加参数](#%E7%BB%99URL%E6%B7%BB%E5%8A%A0%E5%8F%82%E6%95%B0)
     - [将编码由utf8转为utf16](#%E5%B0%86%E7%BC%96%E7%A0%81%E7%94%B1utf8%E8%BD%AC%E4%B8%BAutf16)
     - [将编码由utf16转为utf8](#%E5%B0%86%E7%BC%96%E7%A0%81%E7%94%B1utf16%E8%BD%AC%E4%B8%BAutf8)
     - [对字符串进行base64编码](#%E5%AF%B9%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9B%E8%A1%8Cbase64%E7%BC%96%E7%A0%81)
@@ -39,7 +39,7 @@
   - [html字符与实体转换](#html%E5%AD%97%E7%AC%A6%E4%B8%8E%E5%AE%9E%E4%BD%93%E8%BD%AC%E6%8D%A2)
     - [将html字符实体转译成html字符](#%E5%B0%86html%E5%AD%97%E7%AC%A6%E5%AE%9E%E4%BD%93%E8%BD%AC%E8%AF%91%E6%88%90html%E5%AD%97%E7%AC%A6)
     - [将html字符转译成html字符实体](#%E5%B0%86html%E5%AD%97%E7%AC%A6%E8%BD%AC%E8%AF%91%E6%88%90html%E5%AD%97%E7%AC%A6%E5%AE%9E%E4%BD%93)
-  - [LocalStorage操作](#localstorage%E6%93%8D%E4%BD%9C)
+  - [LocalStorage操作](#LocalStorage%E6%93%8D%E4%BD%9C)
   - [dom操作](#dom%E6%93%8D%E4%BD%9C)
   - [自定义扩展 $fn](#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%89%A9%E5%B1%95-fn)
   - [请我喝杯果汁呗～](#%E8%AF%B7%E6%88%91%E5%96%9D%E6%9D%AF%E6%9E%9C%E6%B1%81%E5%91%97)
@@ -171,6 +171,12 @@ $fn.httpPost({
     headers:{
         'Content-Type':'test'
     }
+})
+// 获取ajax对象可以进行中止连接操作
+$fn.httpPost({
+    url:'/api/test'
+},(ajax)=>{
+    ajax.abort()
 })
 // 初始化时，自定义所有请求拦截
 $fn.setRequestTestFn((data)=>{
