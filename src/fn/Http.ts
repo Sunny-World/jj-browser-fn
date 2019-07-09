@@ -1,5 +1,5 @@
 import { HttpFace } from '@/util/interface.js'
-export const HttpFn:HttpFace = {
+export const HttpFn: HttpFace = {
 	httpConnect() {
 		this.Method = this.Method.toUpperCase();
 		if (this.Method == 'GET' && this.Args) {
@@ -18,24 +18,24 @@ export const HttpFn:HttpFace = {
 			this.Args = null;
 		}
 		// if (this.type !== 'upload') {
-			if (this.Method == 'POST') {
-				let args = "";
-				if (typeof this.Args == 'string') {
-					args = this.Args;
-				} else if (typeof this.Args == 'object') {
-					if (this.dataType == 'json') {
-						this.Args = JSON.stringify(this.Args)
-					} else {
-						let arr = new Array();
-						for (let k in this.Args) {
-							let v = this.Args[k];
-							arr.push(k + "=" + v);
-						}
-						args = arr.join("&");
-						this.Args = encodeURI(args);
+		if (this.Method == 'POST') {
+			let args = "";
+			if (typeof this.Args == 'string') {
+				args = this.Args;
+			} else if (typeof this.Args == 'object') {
+				if (this.dataType == 'json') {
+					this.Args = JSON.stringify(this.Args)
+				} else {
+					let arr = new Array();
+					for (let k in this.Args) {
+						let v = this.Args[k];
+						arr.push(k + "=" + v);
 					}
+					args = arr.join("&");
+					this.Args = encodeURI(args);
 				}
 			}
+		}
 		// }
 		let q = this.Request;
 		let evt1 = this.onSuccess;
@@ -84,17 +84,21 @@ export const HttpFn:HttpFace = {
 		fn,
 		dataType,
 		type
-	}) {
+	}, callback?) {
 		this.URL = "";
 		this.Method = "GET";
 		this.Async = true;
 		this.Args = null;
 		this.headers = headers
 		this.type = type
-		this.onSuccess = function () {};
-        this.onFailure = function () {};
-        // tslint:disable-next-line
-		this.Request = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+		this.onSuccess = function () { };
+		this.onFailure = function () { };
+		// tslint:disable-next-line
+		const rq = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+		if(typeof callback === 'function'){
+			callback(rq)
+		}
+		this.Request = rq
 		// 兼容java不接收undefined参数
 		for (let o in args) {
 			if (args[o] === undefined) {
@@ -119,69 +123,57 @@ export const HttpFn:HttpFace = {
 		};
 		this.httpConnect();
 	},
-	originHttpPost(obj, fn) {
+	originHttpPost(obj, fn, callback?) {
+		const d: any = {
+			url: obj.url,
+			method: 'post',
+			fn,
+			type: obj.type,
+			headers: obj.headers,
+		}
 		if (obj.json !== undefined) {
-			this.ajaxFn({
-				url: obj.url,
-				method: 'post',
-				args: obj.json,
-				fn,
-				headers: obj.headers,
-				dataType: 'json',
-				type: obj.type
-			})
+			d.args = obj.json
+			d.dataType = 'json'
 		} else {
-			this.ajaxFn({
-				url: obj.url,
-				method: 'post',
-				args: obj.data,
-				headers: obj.headers,
-				fn,
-				type: obj.type
-			})
+			d.args = obj.data
+		}
+		this.ajaxFn(d, callback)
+	},
+	originHttpGet(obj, fn, callback?) {
+		const d: any = {
+			url: obj.url,
+			method: 'get',
+			headers: obj.headers,
+			fn,
+			type: obj.type
+		}
+		if (obj.json !== undefined) {
+			d.args = obj.json
+			d.dataType = 'json'
+		} else {
+			d.args = obj.data
+		}
+		this.ajaxFn(d, callback)
+	},
+	setRequestTestFn(fn) {
+		if (this.requestDataAllfn) {
+			this.requestDataAllfn = fn
 		}
 	},
-	originHttpGet(obj, fn) {
-		if (obj.json !== undefined) {
-			this.ajaxFn({
-				url: obj.url,
-				method: 'get',
-				args: obj.json,
-				headers: obj.headers,
-				fn,
-				dataType: 'json',
-				type: obj.type
-			})
-		} else {
-			this.ajaxFn({
-				url: obj.url,
-				method: 'get',
-				args: obj.data,
-				headers: obj.headers,
-				fn,
-				type: obj.type
-			})
-		}
-    },
-    setRequestTestFn(fn){
-        if(this.requestDataAllfn){
-            this.requestDataAllfn=fn
-        }
-    },
-	httpPost(obj) {
+	httpPost(obj, callback?) {
 		return new Promise((resolve) => {
 			this.originHttpPost(obj, (res) => {
 				this.setRequestTestFn(res)
 				resolve(res)
-			})
+			}, callback)
 		})
 	},
-	httpGet(obj) {
+	httpGet(obj, callback?) {
 		return new Promise((resolve) => {
 			this.originHttpGet(obj, (res) => {
 				this.setRequestTestFn(res)
 				resolve(res)
-			})
+			}, callback)
 		})
 	}
 }
