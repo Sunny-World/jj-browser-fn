@@ -87,7 +87,6 @@ export declare const $fn: {
         isWin8: boolean;
         isWin81: boolean;
         isWin10: boolean;
-        isTouchScreen: boolean;
         isChromeOnAndroid: boolean;
     };
     detectOS(): string;

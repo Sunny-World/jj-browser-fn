@@ -37,7 +37,6 @@ export interface DeviceFace {
         isWin8: boolean;
         isWin81: boolean;
         isWin10: boolean;
-        isTouchScreen: boolean;
         isChromeOnAndroid: boolean;
     };
     detectOS(): string;

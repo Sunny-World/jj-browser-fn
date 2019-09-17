@@ -15,34 +15,34 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 - [js工具函数（浏览器环境）](#js%E5%B7%A5%E5%85%B7%E5%87%BD%E6%95%B0%E6%B5%8F%E8%A7%88%E5%99%A8%E7%8E%AF%E5%A2%83)
 
-- [js工具函数（浏览器环境）](#js%E5%B7%A5%E5%85%B7%E5%87%BD%E6%95%B0%E6%B5%8F%E8%A7%88%E5%99%A8%E7%8E%AF%E5%A2%83)
-  - [字符处理](#%E5%AD%97%E7%AC%A6%E5%A4%84%E7%90%86)
-    - [默认处理非数值的内容为0](#%E9%BB%98%E8%AE%A4%E5%A4%84%E7%90%86%E9%9D%9E%E6%95%B0%E5%80%BC%E7%9A%84%E5%86%85%E5%AE%B9%E4%B8%BA0)
-    - [默认处理空字符串为'--'](#%E9%BB%98%E8%AE%A4%E5%A4%84%E7%90%86%E7%A9%BA%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%BA)
-    - [判断是否有值](#%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E6%9C%89%E5%80%BC)
-    - [给URL添加参数](#%E7%BB%99URL%E6%B7%BB%E5%8A%A0%E5%8F%82%E6%95%B0)
-    - [将编码由utf8转为utf16](#%E5%B0%86%E7%BC%96%E7%A0%81%E7%94%B1utf8%E8%BD%AC%E4%B8%BAutf16)
-    - [将编码由utf16转为utf8](#%E5%B0%86%E7%BC%96%E7%A0%81%E7%94%B1utf16%E8%BD%AC%E4%B8%BAutf8)
-    - [对字符串进行base64编码](#%E5%AF%B9%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9B%E8%A1%8Cbase64%E7%BC%96%E7%A0%81)
-    - [对字符串进行base64解码](#%E5%AF%B9%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9B%E8%A1%8Cbase64%E8%A7%A3%E7%A0%81)
-  - [数字处理](#%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86)
-    - [显示两位小数的金额](#%E6%98%BE%E7%A4%BA%E4%B8%A4%E4%BD%8D%E5%B0%8F%E6%95%B0%E7%9A%84%E9%87%91%E9%A2%9D)
-    - [千位符显示数字](#%E5%8D%83%E4%BD%8D%E7%AC%A6%E6%98%BE%E7%A4%BA%E6%95%B0%E5%AD%97)
-  - [时间处理](#%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86)
-    - [自定义格式](#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%BC%E5%BC%8F)
-    - [距离当前时间差处理](#%E8%B7%9D%E7%A6%BB%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4%E5%B7%AE%E5%A4%84%E7%90%86)
-  - [cookie操作](#cookie%E6%93%8D%E4%BD%9C)
-  - [链接操作](#%E9%93%BE%E6%8E%A5%E6%93%8D%E4%BD%9C)
-  - [ajax请求](#ajax%E8%AF%B7%E6%B1%82)
-  - [设备信息](#%E8%AE%BE%E5%A4%87%E4%BF%A1%E6%81%AF)
-    - [获取系统版本](#%E8%8E%B7%E5%8F%96%E7%B3%BB%E7%BB%9F%E7%89%88%E6%9C%AC)
-  - [html字符与实体转换](#html%E5%AD%97%E7%AC%A6%E4%B8%8E%E5%AE%9E%E4%BD%93%E8%BD%AC%E6%8D%A2)
-    - [将html字符实体转译成html字符](#%E5%B0%86html%E5%AD%97%E7%AC%A6%E5%AE%9E%E4%BD%93%E8%BD%AC%E8%AF%91%E6%88%90html%E5%AD%97%E7%AC%A6)
-    - [将html字符转译成html字符实体](#%E5%B0%86html%E5%AD%97%E7%AC%A6%E8%BD%AC%E8%AF%91%E6%88%90html%E5%AD%97%E7%AC%A6%E5%AE%9E%E4%BD%93)
-  - [LocalStorage操作](#LocalStorage%E6%93%8D%E4%BD%9C)
-  - [dom操作](#dom%E6%93%8D%E4%BD%9C)
-  - [自定义扩展 $fn](#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%89%A9%E5%B1%95-fn)
-  - [请我喝杯果汁呗～](#%E8%AF%B7%E6%88%91%E5%96%9D%E6%9D%AF%E6%9E%9C%E6%B1%81%E5%91%97)
+- [js工具函数（浏览器环境）](#js%e5%b7%a5%e5%85%b7%e5%87%bd%e6%95%b0%e6%b5%8f%e8%a7%88%e5%99%a8%e7%8e%af%e5%a2%83)
+  - [字符处理](#%e5%ad%97%e7%ac%a6%e5%a4%84%e7%90%86)
+    - [默认处理非数值的内容为0](#%e9%bb%98%e8%ae%a4%e5%a4%84%e7%90%86%e9%9d%9e%e6%95%b0%e5%80%bc%e7%9a%84%e5%86%85%e5%ae%b9%e4%b8%ba0)
+    - [默认处理空字符串为'--'](#%e9%bb%98%e8%ae%a4%e5%a4%84%e7%90%86%e7%a9%ba%e5%ad%97%e7%ac%a6%e4%b8%b2%e4%b8%ba)
+    - [判断是否有值](#%e5%88%a4%e6%96%ad%e6%98%af%e5%90%a6%e6%9c%89%e5%80%bc)
+    - [给URL添加参数](#%e7%bb%99url%e6%b7%bb%e5%8a%a0%e5%8f%82%e6%95%b0)
+    - [将编码由utf8转为utf16](#%e5%b0%86%e7%bc%96%e7%a0%81%e7%94%b1utf8%e8%bd%ac%e4%b8%bautf16)
+    - [将编码由utf16转为utf8](#%e5%b0%86%e7%bc%96%e7%a0%81%e7%94%b1utf16%e8%bd%ac%e4%b8%bautf8)
+    - [对字符串进行base64编码](#%e5%af%b9%e5%ad%97%e7%ac%a6%e4%b8%b2%e8%bf%9b%e8%a1%8cbase64%e7%bc%96%e7%a0%81)
+    - [对字符串进行base64解码](#%e5%af%b9%e5%ad%97%e7%ac%a6%e4%b8%b2%e8%bf%9b%e8%a1%8cbase64%e8%a7%a3%e7%a0%81)
+  - [数字处理](#%e6%95%b0%e5%ad%97%e5%a4%84%e7%90%86)
+    - [显示两位小数的金额](#%e6%98%be%e7%a4%ba%e4%b8%a4%e4%bd%8d%e5%b0%8f%e6%95%b0%e7%9a%84%e9%87%91%e9%a2%9d)
+    - [千位符显示数字](#%e5%8d%83%e4%bd%8d%e7%ac%a6%e6%98%be%e7%a4%ba%e6%95%b0%e5%ad%97)
+  - [时间处理](#%e6%97%b6%e9%97%b4%e5%a4%84%e7%90%86)
+    - [自定义格式](#%e8%87%aa%e5%ae%9a%e4%b9%89%e6%a0%bc%e5%bc%8f)
+    - [距离当前时间差处理](#%e8%b7%9d%e7%a6%bb%e5%bd%93%e5%89%8d%e6%97%b6%e9%97%b4%e5%b7%ae%e5%a4%84%e7%90%86)
+  - [cookie操作](#cookie%e6%93%8d%e4%bd%9c)
+  - [链接操作](#%e9%93%be%e6%8e%a5%e6%93%8d%e4%bd%9c)
+  - [ajax请求](#ajax%e8%af%b7%e6%b1%82)
+  - [设备信息](#%e8%ae%be%e5%a4%87%e4%bf%a1%e6%81%af)
+    - [获取系统版本](#%e8%8e%b7%e5%8f%96%e7%b3%bb%e7%bb%9f%e7%89%88%e6%9c%ac)
+  - [html字符与实体转换](#html%e5%ad%97%e7%ac%a6%e4%b8%8e%e5%ae%9e%e4%bd%93%e8%bd%ac%e6%8d%a2)
+    - [将html字符实体转译成html字符](#%e5%b0%86html%e5%ad%97%e7%ac%a6%e5%ae%9e%e4%bd%93%e8%bd%ac%e8%af%91%e6%88%90html%e5%ad%97%e7%ac%a6)
+    - [将html字符转译成html字符实体](#%e5%b0%86html%e5%ad%97%e7%ac%a6%e8%bd%ac%e8%af%91%e6%88%90html%e5%ad%97%e7%ac%a6%e5%ae%9e%e4%bd%93)
+  - [LocalStorage操作](#localstorage%e6%93%8d%e4%bd%9c)
+  - [dom操作](#dom%e6%93%8d%e4%bd%9c)
+  - [自定义扩展 $fn](#%e8%87%aa%e5%ae%9a%e4%b9%89%e6%89%a9%e5%b1%95-fn)
+  - [请我喝杯果汁呗～](#%e8%af%b7%e6%88%91%e5%96%9d%e6%9d%af%e6%9e%9c%e6%b1%81%e5%91%97)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -224,8 +224,6 @@ $fn.getDeviceType()
     isWin8: /windows nt 6.2/.test(UserAgent),
     isWin81: /windows nt 6.3/.test(UserAgent),
     isWin10: /windows nt 10.0/.test(UserAgent),
-    isTouchScreen: ('ontouchstart' in window) || window.DocumentTouch &&
-        document instanceof DocumentTouch,
     isChromeOnAndroid
 }
 */

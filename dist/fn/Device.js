@@ -47,8 +47,6 @@ export var DeviceFn = {
             isWin8: /windows nt 6.2/.test(UserAgent),
             isWin81: /windows nt 6.3/.test(UserAgent),
             isWin10: /windows nt 10.0/.test(UserAgent),
-            isTouchScreen: ('ontouchstart' in window) || DocumentTouch &&
-                document instanceof DocumentTouch,
             isChromeOnAndroid: isChromeOnAndroid
         };
     },
