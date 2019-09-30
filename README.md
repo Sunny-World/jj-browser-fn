@@ -1,8 +1,8 @@
 # js工具函数（浏览器环境）
 - 重要更新！核心模块以及本工具函数基于typescript重构以及api简化，原基于class api废弃，暴露的$fn为自2.0改为对象，
 - 现支持typescript,以及js直接在html中引用
-- [文档地址](https://javison666.github.io/jj-browser-fn/)
-- [github地址](https://github.com/Javison666/jj-browser-fn)
+- [文档地址](https://sunny-world.github.io/jj-browser-fn/)
+- [github地址](https://github.com/sunny-world/jj-browser-fn)
 - 引用库，后续 $fn 直接当作全局进行使用
     ```js
     import $fn from 'jj-browser-fn'
@@ -293,4 +293,4 @@ export default ProjFn
 
 ## 请我喝杯果汁呗～
 
-![Image text](https://github.com/Javison666/jj-browser-fn/blob/master/image/alipay.jpg?raw=true)![Image text](https://github.com/Javison666/jj-browser-fn/blob/master/image/wechat.jpg?raw=true)
+![Image text](https://github.com/sunny-world/jj-browser-fn/blob/master/image/alipay.jpg?raw=true)![Image text](https://github.com/sunny-world/jj-browser-fn/blob/master/image/wechat.jpg?raw=true)
