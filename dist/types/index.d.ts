@@ -94,7 +94,7 @@ export declare const $fn: {
         type: string;
         version: string;
     };
-    setCookie(cname: any, cvalue: any, exdays: any): void;
+    setCookie(cname: any, cvalue: any, exdays: any, path: any): void;
     getCookie(cname: string): void;
     clearCookie(cname: string): void;
 };

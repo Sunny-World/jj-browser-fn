@@ -1,5 +1,5 @@
 export interface CookieFace {
-    setCookie(cname, cvalue, exdays): void,
+    setCookie(cname, cvalue, exdays, path): void,
     getCookie(cname: string): void,
     clearCookie(cname: string): void
 }
