@@ -1,4 +1,6 @@
-export var UrlFn = {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.UrlFn = {
     /**
      * 跳转链接
      * @param {*} href
@@ -54,5 +56,5 @@ export var UrlFn = {
         img.src = src;
     }
 };
-export default UrlFn;
+exports.default = exports.UrlFn;
 //# sourceMappingURL=Url.js.map

@@ -1,4 +1,6 @@
-export var LocalStorageFn = {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.LocalStorageFn = {
     setStorage: function (key, value) {
         if (this.getStorageType(value) === "Object" || this.getStorageType(value) === "Array") { // 如果是对象
             value = JSON.stringify(value);
@@ -36,5 +38,5 @@ export var LocalStorageFn = {
         return Object.prototype.toString.call(object).match(/^\[object\s(.*)\]$/)[1];
     }
 };
-export default LocalStorageFn;
+exports.default = exports.LocalStorageFn;
 //# sourceMappingURL=LocalStorage.js.map

@@ -1,5 +1,7 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // 客户端设备相关信息
-export var CookieFn = {
+exports.CookieFn = {
     setCookie: function (cname, cvalue, exdays, path) {
         var d = new Date();
         d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -22,5 +24,5 @@ export var CookieFn = {
         this.setCookie(cname, "", -1);
     }
 };
-export default CookieFn;
+exports.default = exports.CookieFn;
 //# sourceMappingURL=Cookie.js.map

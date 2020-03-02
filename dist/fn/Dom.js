@@ -1,4 +1,6 @@
-export var DomFn = {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DomFn = {
     /**
      * 将html字符实体转译成html字符(只适用于浏览器客户端)
      * @param {字符实体} str
@@ -97,5 +99,5 @@ export var DomFn = {
         }
     }
 };
-export default DomFn;
+exports.default = exports.DomFn;
 //# sourceMappingURL=Dom.js.map

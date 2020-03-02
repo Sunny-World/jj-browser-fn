@@ -1,5 +1,7 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // 客户端设备相关信息
-export var DeviceFn = {
+exports.DeviceFn = {
     getDeviceType: function () {
         var UserAgent = window.navigator.userAgent.toLowerCase();
         var isChromeOnAndroid = false;
@@ -138,5 +140,5 @@ export var DeviceFn = {
         }
     }
 };
-export default DeviceFn;
+exports.default = exports.DeviceFn;
 //# sourceMappingURL=Device.js.map

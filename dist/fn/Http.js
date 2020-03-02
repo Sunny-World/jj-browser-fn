@@ -1,4 +1,6 @@
-export var HttpFn = {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.HttpFn = {
     httpConnect: function () {
         var _this = this;
         this.Method = this.Method.toUpperCase();
@@ -182,5 +184,5 @@ export var HttpFn = {
         });
     }
 };
-export default HttpFn;
+exports.default = exports.HttpFn;
 //# sourceMappingURL=Http.js.map
